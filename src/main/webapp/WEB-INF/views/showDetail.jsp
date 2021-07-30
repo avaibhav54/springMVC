@@ -18,13 +18,13 @@ your details will be shown here
 <br>
 <br>
 <br>
-your mail is  ${u.mail }
+your mail is  ${user.mail }
 
 <br>
-your name is  ${u.name }
+your name is  ${user.name }
 
 <br>
-your password is  ${u.password }
+your password is  ${user.password }
 
 <br>
 

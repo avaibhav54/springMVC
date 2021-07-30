@@ -1,5 +1,6 @@
 package springMVC.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -7,9 +8,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import springMVC.model.user;
+import springMVC.service.userService;
 
 @Controller
 public class contactHandler {
+	@Autowired
+private userService userservice;
 
 	@RequestMapping("/contact")
 	public String showForm()
@@ -36,9 +40,8 @@ public class contactHandler {
 	public String contact(@ModelAttribute user u,Model model)
 	{
 		System.out.println(u);
-		model.addAttribute("u",u);
+		this.userservice.createUser(u);
 		return "showDetail";
 	}
-	
 	
 }

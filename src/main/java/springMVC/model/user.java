@@ -1,6 +1,17 @@
 package springMVC.model;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+import org.springframework.stereotype.Component;
+
+@Entity
 public class user {
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private int id;
 private String mail;
 private String name;
 private String password;
